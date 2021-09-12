@@ -1,0 +1,36 @@
+<div class="edit-div">
+    <section class="enquiry-form">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <mat-form-field>
+          <input matInput #input maxlength="10" placeholder="Enter Your First Name">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+  
+        <mat-form-field hintLabel="Max 10 characters">
+          <input matInput #input maxlength="10" placeholder="Enter Your Last Name">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+  
+        <mat-form-field>
+          <input type="email" matInput placeholder="Your email" 
+          ngModel name="email" 
+          email required #emailInput="ngModel">
+          <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
+          <mat-error *ngIf="!emailInput.hasError('required')">E-Mail is invalid.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input type="phone_Number" matInput placeholder="Enter Phone Number" 
+          ngModel name="password"
+          phone_Number required minlength="10" #Phone_NumberInput="ngModel">
+          <mat-hint>min 10 Numerical Value required!</mat-hint>
+          <mat-error *ngIf="Phone_NumberInput.hasError('required')">Field must not be empty.</mat-error>
+          <mat-error *ngIf="!Phone_NumberInput.hasError('required')">Phone Number is invalid.</mat-error>
+        </mat-form-field>
+        
+        <br>
+        <button type="submit" mat-raised-button color="primary" class="submit">Submit</button>
+        <br/>
+      </form>
+    </section>
+  </div>

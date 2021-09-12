@@ -1,0 +1,19 @@
+.enquiry-form{
+    width:350px;
+    
+  }
+  .edit-div{
+    border: 1px solid black;
+    margin-top: 2%;
+    min-height: 50vh;
+    padding: 28px 3rem 1rem;
+    text-align: -webkit-center;
+    background-color: #c4ffd9;
+    width: 40%;
+    margin-left: 28%;
+    border-radius: 16px;
+  }
+  .submit{
+    margin-top: 12px;
+    border-radius: 6px;
+  }

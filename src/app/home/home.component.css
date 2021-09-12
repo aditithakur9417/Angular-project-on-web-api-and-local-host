@@ -1,0 +1,15 @@
+.text-danger{
+    cursor: pointer;
+}
+
+a{
+text-decoration: none;
+font-size: 25px;
+
+border-style: solid;
+}
+.logoutbtn{
+    margin-left: 92%;
+    align-content: center;
+    cursor: pointer;
+}

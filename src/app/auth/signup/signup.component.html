@@ -1,0 +1,78 @@
+<div class="row">
+
+  <div class="column" style="background-color:#192B3F;">
+
+    <img src="..\..\..\assets\img\4.png" class="img">
+   
+    <h1 style=" font-family:Comfortaa;"> Welcome!</h1>
+    <p style="font-size:1vw;color:white;font-size:1vw;font-family:Comfortaa;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem <br>Ipsum has been the industry's standard dummy text ever since the 1500s, when an<br> unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+ 
+  </div>
+  <div class="column" style="background-color:#192B3F;">
+<div class= "registerForm">
+  <h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <mat-form-field style="width: 100%;">
+        <label mat-label for="firstName">First Name</label>
+        <input matInput type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <mat-error *ngIf="f.firstName.hasError('required')">First Name is required</mat-error>
+        </div>
+      </mat-form-field>
+    </div>
+   
+    <div class="form-group">
+      <mat-form-field style="width: 100%;">
+        <label mat-label for="username">Email</label><br>
+        <input matInput type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <mat-error *ngIf="f.username.hasError('required')">Username is required</mat-error>
+        </div>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field style="width: 100%;">
+      <label mat-label for="email">Phone number</label><br>
+      <input matInput type="number" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <mat-error *ngIf="f.email.hasError('required').minlength">Email must be at least 6 characters</mat-error>
+      </div>
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field style="width: 100%;">
+        <label mat-label for="lastName">Gender</label><br>
+        <input matInput type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <mat-error *ngIf="f.lastName.hasError('required')">Last Name is required</mat-error>
+        </div>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <mat-form-field style="width: 100%;">
+        <label mat-label for="password">Password</label><br>
+        <input matInput type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <mat-error *ngIf="f.password.hasError('required').minlength">Password must be at least 6 characters</mat-error>
+        </div>
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+        <button mat-raised-button [disabled]="loading" color="primary">SignUp</button>
+      
+        <button mat-raised-button>
+          <a routerLink="/login">Login</a>
+        
+        </button>
+    </div>
+</form>
+</div>
+
+
+
+  </div>
+
+</div>

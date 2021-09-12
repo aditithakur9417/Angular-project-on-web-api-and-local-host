@@ -1,0 +1,55 @@
+
+<div class="row">
+
+  <div class="column" style="background-color:#192B3F;">
+
+    <img src="..\..\..\assets\img\4.png" class="img">
+   
+   <h1 style=" font-family:Comfortaa;"> Welcome!</h1>
+   <p style="font-size:1vw;color:white;font-size:1vw;font-family:Comfortaa;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem <br>Ipsum has been the industry's standard dummy text ever since the 1500s, when an<br> unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+  </div>
+  <div class="column" style="background-color:#192B3F;">
+
+    <div class="registerForm">
+      <h2>Login</h2>
+      
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+
+          <div class="form-group">
+            <mat-form-field  style="width: 100%;">
+            <mat-label>Email</mat-label>
+              <input autocomplete="off" matInput type="text"  formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+              <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <mat-error *ngIf="f.username.hasError('required')">Username is required</mat-error>
+              </div>
+              </mat-form-field>
+          </div>
+      
+          <div class="form-group">
+            <mat-form-field  style="width: 100%;">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <mat-error *ngIf="f.password.hasError('required')">Password is required</mat-error>
+              </div>
+            </mat-form-field>
+          </div>
+      
+          <div class="form-group">
+            <button mat-raised-button [disabled]="loading" color="primary"> Login</button>
+           
+            <button mat-raised-button>
+              <a [routerLink]="['/UserSignup']">Register</a>
+            
+              </button>
+          </div>
+          <router-outlet></router-outlet>
+      </form>
+      </div>
+      
+         
+
+  </div>
+
+</div>
